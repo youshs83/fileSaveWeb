@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@import "react-datepicker/dist/react-datepicker.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #f1f5f9;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-text: #0f172a;
+  --color-muted: #64748b;
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.07), 0 1px 2px -1px rgb(0 0 0 / 0.07);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.08);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+  --radius: 12px;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Pretendard', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* DatePicker 오버라이드 */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+.react-datepicker__input-container input {
+  width: 100%;
+}
+.react-datepicker-popper {
+  z-index: 100;
+}
+
+/* ─── 반응형 유틸리티 ─── */
+
+/* 모바일에서 숨김 (>= 768px 에서 표시) */
+.hidden-mobile {
+  display: flex;
+}
+@media (max-width: 767px) {
+  .hidden-mobile { display: none !important; }
+}
+
+/* 데스크톱에서 숨김 (<= 767px 에서 표시) */
+.hidden-desktop {
+  display: none;
+}
+@media (max-width: 767px) {
+  .hidden-desktop { display: flex !important; }
+}
+
+/* iOS 자동 확대 방지 */
+@media (max-width: 767px) {
+  .input,
+  .react-datepicker__input-container input {
+    font-size: 16px !important;
+  }
+
+  /* Safe area 하단 여백 */
+  body {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+/* 버튼 터치 영역 최적화 */
+button, a.btn {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
