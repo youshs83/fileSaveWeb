@@ -1,6 +1,6 @@
 # Phone Archive — 사진 아카이빙 웹앱
 
-폰 사진을 개인 PC로 업로드하고 날짜별로 관리·검색·미리보기하는 웹 애플리케이션입니다.
+사진을 개인 PC로 업로드하고 날짜별로 관리·검색·미리보기하는 웹 애플리케이션입니다.
 
 ## 기술 스택
 - **Frontend**: React + Vite + Tailwind CSS v4 + Zustand
